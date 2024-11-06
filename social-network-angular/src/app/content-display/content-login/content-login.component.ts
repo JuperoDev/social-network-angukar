@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-content-login',
   templateUrl: './content-login.component.html',
-  styleUrl: './content-login.component.scss'
 })
 export class ContentLoginComponent {
+  constructor(public authService: AuthService) {}
 
+  onGoogleSignIn() {
+    this.authService.googleSignIn();
+  }
 }
